@@ -68,26 +68,7 @@ npm install
 1. Aktifkan modul **MySQL** pada panel kontrol database Anda (misal: XAMPP atau Laragon).
 2. Masuk ke halaman pengelolaan database (seperti **phpMyAdmin** di `http://localhost/phpmyadmin`).
 3. Buat database baru bernama **`chat-app`**.
-4. Impor atau jalankan perintah SQL berikut untuk membuat tabel `users` dan `messages`:
-
-```sql
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    status VARCHAR(50) DEFAULT NULL,
-    last_seen DATETIME DEFAULT NULL
-);
-
-CREATE TABLE IF NOT EXISTS messages (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    sender VARCHAR(255) NOT NULL,
-    receiver VARCHAR(255) NOT NULL,
-    message TEXT NOT NULL,
-    status VARCHAR(50) DEFAULT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+4. Impor file `chat-app.sql`
 
 ### 4. Konfigurasi Environment Variables
 Salin file `.env.example` menjadi `.env`:
